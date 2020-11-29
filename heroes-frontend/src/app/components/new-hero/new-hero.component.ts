@@ -70,6 +70,7 @@ export class NewHeroComponent implements OnInit, AfterViewInit {
         data => {
           this.ShowMessageSuccess();
           this.router.navigate(['/']);
+          this.appcomponent.currentlUrl = this.appcomponent.baseUrl;
           this.appcomponent.getHeroes();
 
         },
