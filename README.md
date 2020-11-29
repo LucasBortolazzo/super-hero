@@ -1,18 +1,18 @@
-# Gestão de heróis com Angular e Django Rest Framework
+# Gestão de Super Heróis com Angular e Django Rest Framework
 
 Plataforma para gestão de Super Heróis utilizando Angular para o front-end e Django Rest Framework para a construção da api back-end.
 
 ## Features
 
 1. Inclusão, alteração e exclusão de super heróis
-2. Pesquisa de super heróis por nome
+2. Pesquisa de super heróis
 3. Criação de lista de super heróis favoritos
 4. Validação de campos feitas com javascript
 5. Paginação server side(rest_framework.pagination, PAGE_SIZE: 10)
 6. Inclusão de e alteração arquivos de mídia
 7. Mensagens de notificações(sweetalert2)
 8. Endpoints cobertos por testes
-9- Design responsivo(PC, celular, tablet, notebook)
+9. Design responsivo(PC, celular, tablet, notebook)
 
 
 ## Demonstration
