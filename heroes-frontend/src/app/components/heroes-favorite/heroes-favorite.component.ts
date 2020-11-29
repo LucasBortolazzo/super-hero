@@ -9,8 +9,8 @@ import Swal from 'sweetalert2/dist/sweetalert2.js';
 })
 export class HeroesFavoriteComponent implements OnInit {
   title = 'heroes-favorite';
-  baseUrl = 'https://api-heroes-v1.herokuapp.com/heroes/?favorite=1';
-  currentlUrl = 'https://api-heroes-v1.herokuapp.com/heroes/?favorite=1';
+  baseUrl = 'http://localhost:8000/heroes/?favorite=1';
+  currentlUrl = 'http://localhost:8000/heroes/?favorite=1';
   page_next = '';
   page_previous = '';
 

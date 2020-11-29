@@ -13,15 +13,13 @@ declare function hackdivimage(): any;
 })
 export class AppComponent {
   title = 'Hero management';
-  baseUrl = 'https://api-heroes-v1.herokuapp.com/heroes/';
-  currentlUrl = 'https://api-heroes-v1.herokuapp.com/heroes/';
+  baseUrl = 'http://localhost:8000/heroes/';
+  currentlUrl = 'http://localhost:8000/heroes/';
   page_next = '';
   page_previous = '';
 
   heroes = [
-    { id: '1', name: 'superman', description: 'Muito longaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 123456786867676767667' },
-    { id: '2', name: 'homem aranha', description: 'Muito longaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 123456786867676767667' },
-    { id: '3', name: 'hulk', description: 'Muito longaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 123456786867676767667' },
+    { id: '', name: '', description: '' },
   ]
 
   constructor(private api: ApiService,
