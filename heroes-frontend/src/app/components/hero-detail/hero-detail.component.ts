@@ -4,6 +4,7 @@ import { AppComponent } from 'src/app/app.component';
 import { ApiService } from 'src/services/api.service';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
 
+declare function validateFieldsJavaScript(): boolean;
 @Component({
   selector: 'app-hero-detail',
   templateUrl: './hero-detail.component.html',
@@ -87,17 +88,19 @@ export class HeroDetailComponent implements OnInit {
     formData.append('description', this.selected_hero.description);
     formData.append('favorite', JSON.stringify(this.selected_hero.favorite));
 
-    this.api.putHeroDetail(formData).subscribe(
-      data => {
-        this.ShowMessageSuccess();
-        this.selected_hero = data;
-        this.refreshPageHomeComplete();
-      },
-      error => {
-        console.log('An unexpected error has occurred.', error)
-      }
-    )
-  }
+    if (validateFieldsJavaScript()) {
+      this.api.putHeroDetail(formData).subscribe(
+        data => {
+          this.ShowMessageSuccess();
+          this.selected_hero = data;
+          this.refreshPageHomeComplete();
+        },
+        error => {
+          console.log('An unexpected error has occurred.', error)
+        }
+      );
+    };
+  };
 
   deleteHero() {
     Swal.fire({

@@ -5,7 +5,7 @@ import { AppComponent } from 'src/app/app.component';
 import { ApiService } from 'src/services/api.service';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
 
-declare function FieldsRequiredIsValid(): boolean;
+declare function validateFieldsJavaScript(): boolean;
 @Component({
   selector: 'app-new-hero',
   templateUrl: './new-hero.component.html',
@@ -65,7 +65,7 @@ export class NewHeroComponent implements OnInit, AfterViewInit {
     formData.append('description', this.hero.description);
     formData.append('favorite', JSON.stringify(this.hero.favorite));
 
-    if (FieldsRequiredIsValid()) {
+    if (validateFieldsJavaScript()) {
       this.api.postNewHero(formData).subscribe(
         data => {
           this.ShowMessageSuccess();
