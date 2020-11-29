@@ -4,7 +4,7 @@ import { ApiService } from 'src/services/api.service';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 declare function HideMenuJavaScript(): any;
-declare function hackdivimage(): any;
+declare function moveScrollTop(): any;
 
 @Component({
   selector: 'app-root',
@@ -47,6 +47,8 @@ export class AppComponent {
         console.log('An unexpected error has occurred.', error)
       }
     )
+
+    moveScrollTop();
   }
 
   deleteHero(hero) {
@@ -78,11 +80,13 @@ export class AppComponent {
   }
 
   heroDetailClicked = (hero) => {
-    this.router.navigate(['hero-detail', hero.id])
+    this.router.navigate(['hero-detail', hero.id]);
+    moveScrollTop();
   }
 
   heroAddNewClicked = () => {
-    this.router.navigate(['new-hero'])
+    this.router.navigate(['new-hero']);
+    moveScrollTop();
   }
 
   HideMenu() {

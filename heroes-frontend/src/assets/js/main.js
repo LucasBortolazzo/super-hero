@@ -30,13 +30,6 @@ function FieldsRequiredIsValid() {
     return true;
 }
 
-function hackdivimage() {
-    alert('passando');
-    var dateDiv = document.getElementById('dateTime');
-    if (!dateDiv) {
-        dateDiv = document.createElement('div');
-        dateDiv.id = 'dateTime';
-        document.body.appendChild(dateDiv);
-    }
-    alert('passou');
+function moveScrollTop() {
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
 }
