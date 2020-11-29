@@ -1,0 +1,116 @@
+<!--Main Navigation-->
+<header>
+  <!--Navbar-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark primary-color">
+
+    <div class="container">
+
+      <!-- Navbar brand -->
+
+      <a class="navbar-brand" routerLink="/" routerLinkActive="active">Heroes management</a>
+
+      <!-- Collapse button -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+        aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Collapsible content -->
+      <div class="collapse navbar-collapse" id="basicExampleNav">
+
+        <!-- Links -->
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" routerLink="/" routerLinkActive="active" (click)="HideMenu()">Heroes List
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/new-hero" routerLinkActive="active" (click)="HideMenu()">New Hero</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/favorite-heroes" (click)="HideMenu()">
+              My Favorite Heroes List</a>
+          </li>
+        </ul>
+        <!-- Links -->
+
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search by hero name" aria-label="Search"
+            name="search2" id="search2">
+          <button class="btn btn-info my-2 my-sm-0" (click)="searchHeroes()" type="submit">Search</button>
+        </form>
+
+      </div>
+      <!-- Collapsible content -->
+
+    </div>
+
+  </nav>
+  <!--/.Navbar-->
+</header>
+<!--Main Navigation-->
+<div class="backgroundimage" name="imgbackground"> </div>
+<div class="container customcontainer" *ngIf="router.url == '/'">
+
+  <div class="table-responsive-lg">
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let hero of heroes">
+          <td>
+            <div id="inner">
+              <div class="circular--portraitmin">
+                <img src="{{ hero.photo }}" class="zoom" (click)="heroDetailClicked(hero)" id="thumbhero">
+              </div>
+            </div>
+          </td>
+          <td class="customtdid">{{hero.id}} </td>
+          <td class="customtdname">{{hero.name}}</td>
+          <td class="customtd">{{hero.description}}</td>
+          <td>
+            <button type="button" class="btn btn-outline-info btn-sm mr-2 mb-2 btngrid"
+              (click)="heroDetailClicked(hero)">
+              <span class="fa fa-info-circle" aria-hidden="true"></span>Details
+            </button>
+
+            <button type="button" class="btn btn-outline-primary btn-sm mr-2 mb-2 btngrid"
+              (click)="heroAddNewClicked()">
+              <span class="fa fa-plus" aria-hidden="true"></span>New
+            </button>
+
+            <button type="button" class="btn btn-outline-danger btn-sm mr-2 mb-2 btngrid" (click)="deleteHero(hero)">
+              <span class="fa fa-trash" aria-hidden="true"></span>Delete
+            </button>
+          </td>
+
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="btngridnavigate">
+      <button type="button" class="btn btn-primary btn-sm mr-2 btngrid" title="previous 10 records"
+        (click)="fetchPrevious()">
+        <span class="fa fa-backward" aria-hidden="true"></span>
+      </button>
+
+      <button type="button" class="btn btn-primary btn-sm mr-2 btngrid" title="next 10 records" (click)="fetchNext()">
+        <span class="fa fa-forward" aria-hidden="true"></span>
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<router-outlet></router-outlet>

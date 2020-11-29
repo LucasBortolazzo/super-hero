@@ -1,0 +1,5 @@
+# cache images/pdf docs for 60 secs
+<FilesMatch "\.(ico|pdf|jpg|jpeg|png|gif)$">
+  Header set Cache-Control "max-age=60, public, must-revalidate"
+  Header unset Last-Modified
+</FilesMatch>

@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="table-responsive-lg mt-2">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let hero of heroes">
+                    <td>
+                        <div id="inner">
+                            <div class="circular--portraitmin">
+                                <img src="{{ hero.photo }}" class="zoom">
+                            </div>
+                        </div>
+                    </td>
+                    <td class="customtdid">{{hero.id}} </td>
+                    <td class="customtdname">{{hero.name}}</td>
+                    <td class="customtd">{{hero.description}}</td>
+                    <td>
+                        <button type="button" class="btn btn-outline-danger btn-sm mr-2 mb-2 btngrid"
+                            (click)="deleteFavoriteHero(hero)">
+                            <span class=" fa fa-star-o" aria-hidden="true"></span>Delete
+                        </button>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="btngridnavigate">
+            <button type="button" class="btn btn-primary btn-sm mr-2 btngrid" title="previous 10 records"
+                (click)="fetchPrevious()">
+                <span class="fa fa-backward" aria-hidden="true"></span>
+            </button>
+
+            <button type="button" class="btn btn-primary btn-sm mr-2 btngrid" title="next 10 records"
+                (click)="fetchNext()">
+                <span class="fa fa-forward" aria-hidden="true"></span>
+            </button>
+        </div>
+
+    </div>
+</div>

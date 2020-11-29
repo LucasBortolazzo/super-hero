@@ -1,0 +1,45 @@
+<div class="container">
+    <form #frm="ngForm" class="card p-3 bg-light" enctype="multipart/form-data">
+        <div id="inner">
+            <div class="circular--portrait">
+                <object data="../../../assets/img/hero.jpg" type="image">
+                    <img src="{{ selected_hero.photo }}">
+                </object>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" [(ngModel)]="selected_hero.id" name="id" readonly>
+        </div>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" #input1 class="form-control" id="name" [(ngModel)]="selected_hero.name" name="name"
+                minlength="3" autocomplete="off" myAutofocus required>
+        </div>
+        <div class="form-group">
+            <label for="name">Description</label>
+            <textarea class="form-control" id="description" [(ngModel)]="selected_hero.description"
+                name="description"></textarea>
+        </div>
+
+        <form>
+            <div class="form-group">
+                <label for="exampleFormControlFile1">Photo Hero</label>
+                <input type="file" class="form-control-file" id="exampleFormControlFile1" (change)="onChange($event)"
+                    name="photo">
+            </div>
+        </form>
+
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="favorite" [(ngModel)]="selected_hero.favorite"
+                name="favorite">
+            <label class="form-check-label" for="favorite">Add to favorite heroes</label>
+            <br>
+            <br>
+        </div>
+        <button class="btn btn-primary btn-block" (click)="updateHero()">Save</button>
+        <button class="btn btn-secondary btn-block" (click)="cancelClick()">Cancel</button>
+        <button class="btn btn-danger btn-block" (click)="deleteHero()">Delete</button>
+    </form>
+</div>
