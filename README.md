@@ -25,18 +25,19 @@ Back-end: https://api-heroes-v1.herokuapp.com/heroes/
 
 1- git clone https://github.com/LucasBortolazzo/super-hero.git
 
-### Front-end
-
-2. cd '..heroes/heroes-frontend'
-3. run ng build
-4. run ng serve
-5. access: "http://localhost:4200/".
-
 ### Back-end
 
 2. create a Python virtualenv and activate
-3. cd '..heroes/heroes-backend'
-4. run pip install -r requirements.txt
-5. run python manage.py migrate
-6. run python manage.py runserver
-7. access: "http://localhost:8000/".
+3. cd `..heroes/heroes-backend`
+4. run `pip install -r requirements.txt`
+5. run `python manage.py migrate`
+6. run `python manage.py runserver`
+7. access: `http://localhost:8000/`
+
+### Front-end
+
+2. cd `..heroes/heroes-frontend`
+3. run `npm install`
+4. run `ng serve`
+5. access: `http://localhost:4200/`
+
